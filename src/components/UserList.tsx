@@ -1,0 +1,21 @@
+import React, { FC } from "react";
+import { IUser } from "../types/types";
+
+interface UserListProps {
+  users: IUser[];
+}
+
+export const UserList: FC<UserListProps> = ({ users }) => {
+  return (
+    <div>
+      {users.map((user) => {
+        return (
+          <div key={user.id} style={{ padding: 15, border: "1px solid gray" }}>
+            {user.id}. {user.name} проживает в городе {user.adress.city} на
+            улице {user.adress.street}{" "}
+          </div>
+        );
+      })}
+    </div>
+  );
+};
