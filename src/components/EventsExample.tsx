@@ -31,7 +31,7 @@ const EventsExample: FC = () => {
         value={value}
         onChange={changeHandler}
         type="text"
-        placeholder="Управлямый"
+        placeholder="Управляемый"
       />
       <input ref={inputRef} type="text" placeholder="Неуправляемый" />
       <button onClick={clickHandler}>Это тож кнопка</button>
