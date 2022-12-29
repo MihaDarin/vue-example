@@ -1,7 +1,10 @@
 <template>
   <div class="App_container">
     <hero-form @create="createHero" />
-    <heroes-list :heroes="heroes" />
+    <heroes-list
+      :heroes="heroes"
+      @remove="removeHero"
+    />
   </div>
 </template>
 
@@ -16,8 +19,18 @@ export default {
   data() {
     return {
       heroes: [
-        { id: 1, heroName: "Spider-Man", superpower: "Pautina", universe: "Marvel" },
-        { id: 2, heroName: "Superman ", superpower: "Mnogo chego", universe: "DC" },
+        {
+          id: 1,
+          heroName: "Spider-Man",
+          superpower: "Pautina",
+          universe: "Marvel",
+        },
+        {
+          id: 2,
+          heroName: "Superman ",
+          superpower: "Mnogo chego",
+          universe: "DC",
+        },
         {
           id: 3,
           heroName: "Reanimatolog posle smeny",
@@ -33,6 +46,11 @@ export default {
   methods: {
     createHero(hero) {
       this.heroes.push(hero);
+    },
+    removeHero(hero) {
+      this.heroes = this.heroes.filter(
+        (h) => h.id !== hero.id
+      );
     },
   },
 };

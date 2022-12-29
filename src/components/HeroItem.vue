@@ -1,7 +1,9 @@
 <template>
   <div class="hero">
     <div>
-      <h2 class="card_head">{{ hero.heroName }}</h2>
+      <h2 class="card_head">
+        {{ hero.heroName }}
+      </h2>
       <div class="section">
         <span class="title">Superpower:</span>
         <span>{{ hero.superpower }}</span>
@@ -12,14 +14,15 @@
       </div>
     </div>
     <div class="btns">
-      <my-button>Удалить</my-button>
+      <my-button @click="$emit('remove', hero)"
+        >Удалить</my-button
+      >
     </div>
   </div>
 </template>
 
 <script>
 export default {
- 
   props: {
     hero: {
       type: Object,

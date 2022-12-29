@@ -1,5 +1,9 @@
 <template>
-  <input type="text" :value="value" @input="updateInput" />
+  <input
+    type="text"
+    :value="value"
+    @input="updateInput"
+  />
 </template>
 
 <script>
@@ -10,7 +14,10 @@ export default {
   },
   methods: {
     updateInput(event) {
-      this.$emit("update:value", event.target.value);
+      this.$emit(
+        "update:value",
+        event.target.value
+      );
     },
   },
 };

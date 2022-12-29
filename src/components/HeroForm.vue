@@ -1,10 +1,29 @@
 <template>
   <form class="form" @submit.prevent>
     <h3 class="h3">Создание карточки</h3>
-    <my-input v-model:value="hero.heroName" class="input" type="text" placeholder="Hero Name" />
-    <my-input v-model:value="hero.superpower" class="input" type="text" placeholder="Super Power" />
-    <my-input v-model:value="hero.universe" class="input" type="text" placeholder="Universe" />
-    <my-button class="my_button" @click="createHero">Создать</my-button>
+    <my-input
+      v-model:value="hero.heroName"
+      class="input"
+      type="text"
+      placeholder="Hero Name"
+    />
+    <my-input
+      v-model:value="hero.superpower"
+      class="input"
+      type="text"
+      placeholder="Super Power"
+    />
+    <my-input
+      v-model:value="hero.universe"
+      class="input"
+      type="text"
+      placeholder="Universe"
+    />
+    <my-button
+      class="my_button"
+      @click="createHero"
+      >Создать</my-button
+    >
   </form>
 </template>
 
